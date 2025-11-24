@@ -1,0 +1,57 @@
+.UserTable {
+    padding: 0.5rem;
+}
+
+.UserTable button:hover {
+    border-color: rgb(99, 151, 254);
+    background-color: #e0e0e0;
+    transform: scale(1.1);
+}
+
+.UserTable button:active {
+    background-color: #d0d0d0;
+    transform: scale(1);
+}
+
+.UserTable table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.UserTable table tbody tr {
+    background-color: rgb(198, 218, 255);
+}
+
+body.dark-mode .UserTable table tbody tr {
+    background-color: rgb(30, 50, 80);
+}
+
+.UserTable table tbody tr:nth-child(even) {
+    background-color: rgb(219, 230, 255);
+}
+
+body.dark-mode .UserTable table tbody tr:nth-child(even) {
+    background-color: rgb(40, 55, 90);
+}
+
+.UserTable table td,
+.UserTable table th {
+    padding: 0.2rem;
+}
+
+.UserTable table button {
+    padding: 0.2rem 1rem;
+    margin: 0.1rem;
+}
+
+.UserTable .sort-button {
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    margin-left: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    font-size: 14px;
+}
