@@ -1,4 +1,6 @@
 import { useMemo, useState } from "react";
+import SearchInput from "../SearchInput";
+import SortButton from "../SortButton";
 
 import "./UserTable.css";
 
@@ -20,24 +22,17 @@ const UserTable = ({ users }) => {
 
     return (
         <div className="UserTable">
-            <input type="search"
-                value={searchByName}
-                onChange={(e) => setSearchByName(e.target.value)}
-                placeholder="Search by name..."
-            />
+            <SearchInput value={searchByName} onChange={setSearchByName} placeholder={"Search by name..."} />
 
             <table>
                 <thead>
                     <tr>
                         <th>
                             Name
-                            <button
-                                className="sort-button"
-                                type="button"
+                            <SortButton
+                                isAscending={isAscendingByName}
                                 onClick={() => setIsAscendingByName(prev => !prev)}
-                            >
-                                {isAscendingByName ? "↑" : "↓"}
-                            </button>
+                            />
                         </th>
                         <th>Email</th>
                         <th>City</th>

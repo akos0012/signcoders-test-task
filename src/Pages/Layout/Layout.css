@@ -1,3 +1,9 @@
+.Layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .Layout nav {
     display: flex;
     justify-content: space-between;
@@ -19,7 +25,6 @@ body.dark-mode .Layout nav {
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 1rem;
 }
 
 .Layout nav button {
@@ -29,4 +34,22 @@ body.dark-mode .Layout nav {
 
 .Layout nav button:hover {
     box-shadow: 0px 0px 5px rgb(255, 255, 255);
+}
+
+main {
+    flex-grow: 1;
+    margin: 20px;
+}
+
+.Layout .footer {
+    text-align: right;
+    padding: 1rem;
+    background-color: rgb(76, 117, 219);
+    font-size: 0.9rem;
+    color: white;
+}
+
+
+body.dark-mode .footer {
+    background-color: rgb(26, 50, 120);
 }

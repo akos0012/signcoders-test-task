@@ -15,7 +15,14 @@ const Layout = () => (
                 <DarkModeToggle />
             </div>
         </nav>
-        <Outlet />
+
+        <main>
+            <Outlet />
+        </main>
+
+        <footer className="footer">
+            © {new Date().getFullYear()} My App • All rights reserved, just kidding
+        </footer>
     </div>
 );
 

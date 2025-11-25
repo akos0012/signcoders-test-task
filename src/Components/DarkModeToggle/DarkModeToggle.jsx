@@ -4,16 +4,11 @@ import "./DarkModeToggle.css";
 
 const DarkModeToggle = () => {
     const [isDarkMode, setIsDarkMode] = useState(() => {
-        return JSON.parse(localStorage.getItem("isDarkMode")) || false;
+        return JSON.parse(localStorage.getItem("isDarkMode")) ?? false;
     });
 
     useEffect(() => {
-        if (isDarkMode) {
-            document.body.classList.add("dark-mode");
-        } else {
-            document.body.classList.remove("dark-mode");
-        }
-
+        document.body.classList.toggle("dark-mode", isDarkMode);
         localStorage.setItem("isDarkMode", JSON.stringify(isDarkMode));
     }, [isDarkMode]);
 
@@ -23,7 +18,7 @@ const DarkModeToggle = () => {
                 className="toggle-button"
                 onClick={() => setIsDarkMode(prev => !prev)}
             >
-                {isDarkMode ? "Light Mode" : "Dark Mode"}
+                {isDarkMode ? "☀ Light" : "🌙 Dark"}
             </button>
         </div>
     );
