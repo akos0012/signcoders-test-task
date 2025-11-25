@@ -1,9 +1,11 @@
 .UserTable {
     padding: 0.5rem;
+    overflow-x: auto;
 }
 
 .UserTable table {
     width: 100%;
+    min-width: 600px;
     text-align: left;
     border-collapse: collapse;
 }
