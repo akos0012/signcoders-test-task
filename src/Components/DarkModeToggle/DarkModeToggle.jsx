@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 import "./DarkModeToggle.css";
 
 const DarkModeToggle = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        return JSON.parse(localStorage.getItem("isDarkMode")) || false;
+    });
 
     useEffect(() => {
         if (isDarkMode) {
@@ -11,6 +13,8 @@ const DarkModeToggle = () => {
         } else {
             document.body.classList.remove("dark-mode");
         }
+
+        localStorage.setItem("isDarkMode", JSON.stringify(isDarkMode));
     }, [isDarkMode]);
 
     return (
